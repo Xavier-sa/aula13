@@ -1,0 +1,24 @@
+.form {
+    width: 60%;
+    margin: 0 auto;
+
+    .form-content {
+        margin: 14px 0;
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-weight: bold;
+            }
+
+            &.required {
+                label:after {
+                    content: "*";
+                    color: var(--cor-erro);
+                }
+            }
+        }
+    }
+}
