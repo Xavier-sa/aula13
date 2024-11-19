@@ -105,7 +105,7 @@ if (isset($_SESSION['usuario_id'])) {
                 <button type="submit">Entrar</button>
             </div>
         </form>
-        <p>Ainda não tem uma conta? <a href="app/controllers/register_process.php">Cadastre-se</a></p>
+        <p>Ainda não tem uma conta? <a href="registrar.php">Cadastre-se</a></p>
     </div>
 </body>
 </html>

@@ -40,6 +40,14 @@ $filmes = $filmeModel->findAll();
     </style>
 </head>
 <body>
+    <h2>Filmes</h2>
+    <div>
+        <a href="Cadastrar.php">
+        <button>Novo</button>
+        </a>
+    </div>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -75,6 +83,17 @@ $filmes = $filmeModel->findAll();
                                 value="<?php echo $filme->id ?>"
                             >
                             <button>Excluir</button>
+                        </form>
+
+
+                        <form action="Favoritar.php" method="POST">
+                        <input 
+                                type="hidden"
+                                name="id" 
+                                value="<?php echo $filme->id ?>"
+                            >
+                            <button>Favoritos</button>
+
                         </form>
                     </td>
                 </tr>

@@ -17,5 +17,36 @@ class Filme extends Model {
     public function __construct($conn = null) {
         parent::__construct($conn);
     }
-    
+    //hoje dia 18/11/2024--> logica de inserir adicionado ao codigo, ver...
+    public function inserir() {
+        // SQL para inserir um novo filme
+        $query = "INSERT INTO " . $this->table . " (titulo, ano, descricao) VALUES (:titulo, :ano, :descricao)";
+
+        // Preparar a consulta
+        $stmt = $this->conn->prepare($query);
+
+        // Vincular os parâmetros aos valores do objeto
+        $stmt->bindParam(":titulo", $this->titulo);
+        $stmt->bindParam(":ano", $this->ano);
+        $stmt->bindParam(":descricao", $this->descricao);
+
+        // Tentar executar a consulta e verificar se a inserção foi bem-sucedida
+        if ($stmt->execute()) {
+            // Retorna o ID do novo filme inserido
+            $this->id = $this->conn->lastInsertId();
+            return true;
+        } else {
+            // Se a execução falhar, retorna false
+            return false;
+        }
+    }
 }
+?>
+
+
+
+
+
+}
+
+

@@ -13,7 +13,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./:/var/www/html/catalogo-filmes"
+      - "./:/var/www/html/catalogo-filmes_modelo"
       - "./webserver/000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
 volumes:
   mysqldata: null
