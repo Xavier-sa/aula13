@@ -40,6 +40,20 @@ class Filme extends Model {
             return false;
         }
     }
+    // Método para favoritar o filme
+    public function favoritarFilme($id) {
+        // Atualiza o campo "favorito" do filme para 1 (verdadeiro)
+        $sql = "UPDATE " . $this->table . " SET favorito = 1 WHERE id = :id";
+
+        // Prepara a query
+        $stmt = $this->conn->prepare($sql);
+
+        // Vincula o ID do filme ao parâmetro da query
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Executa a query e retorna o resultado
+        return $stmt->execute();
+    }
 }
 ?>
 
