@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /x-player/
 
+# Evita redirecionar para index.php se já estamos nele
+RewriteCond %{REQUEST_URI} !^/x-player/index.php$
+
 # Reescreve URLs amigáveis para index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

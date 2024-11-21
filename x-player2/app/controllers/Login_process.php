@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once '../model/Usuario.php';
 
     // Criar a conexão com o banco de dados
-    $database = new Database();
-    $db = $database->getConnection();
+    $database = new Database('localhost', 3306, 'root', '', 'filmesdb');
+    $db = $database->createConnection();
 
     // Instanciar o modelo de usuário
     $usuario = new Usuario($db);
@@ -36,4 +36,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 }
-?>

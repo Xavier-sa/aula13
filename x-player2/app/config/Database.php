@@ -1,6 +1,7 @@
 <?php
 
-class Database {
+class Database
+{
 
     private $host;
     private $port;
@@ -11,8 +12,9 @@ class Database {
     private $conn;
 
     // responável por instânciar um objeto de Database
-    public function __construct($host, $port, $username, $password, $db) {
-        $this->host= $host;
+    public function __construct($host, $port, $username, $password, $db)
+    {
+        $this->host = $host;
         $this->port = $port;
         $this->username = $username;
         $this->password = $password;
@@ -20,7 +22,8 @@ class Database {
     }
 
     // responsável por criar a conexão com o DB
-    public function createConnection() {
+    public function createConnection()
+    {
         $connUrl = "mysql:host=localhost;port='3306';dbname=filmesdb;charset=utf8mb4";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -32,7 +35,6 @@ class Database {
 
         return $this->conn;
     }
-
 }
 
 $database = new Database(
